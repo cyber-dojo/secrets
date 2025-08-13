@@ -1,0 +1,19 @@
+[
+  {
+    "days_since_update": 14,
+    "days_to_expiry": 2,
+    "days_to_update": 351,
+    "expires_at": "2025-07-24",
+    "has_github_secret": true,
+    "has_txt_file": true,
+    "is_secret": true,
+    "name": "THIS_IS_A_NEW_SECRET",
+    "repo": "server",
+    "scope": "org",
+    "txt_filename": "txt_root/server/gh-org-this-is-a-new-secret.txt",
+    "type": "Expiring soon",
+    "updated_at": "2025-07-08",
+    "uses_in_repo": null
+  }
+]
+

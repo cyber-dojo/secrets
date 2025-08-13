@@ -1,0 +1,26 @@
+secret-name: READ_GH_ISSUES
+secret-expire: 2025-09-24
+is-secret: true
+secret-updated: 2024-09-24
+secret-updated-by: tore
+secret-type: gh-repo
+secret-usage: Used to read GitHub issues
+
+update-instructions:
+Go to the Developer's Github profile
+  -> Settings
+  -> Developer settings
+  -> Personal access tokens
+  -> New fine-grained personal access token
+  -> Generate new token
+Token name: gh-server-read-gh-issues
+Resource owner: kosli-dev
+Expiration: one year
+Description: Read Github issues
+Repository access: Only select repositories - kosli-dev/server
+Permissions:
+  Repository permissions - Issues - Access: Read-only
+
+
+Go to https://github.com/kosli-dev/server/settings/secrets/actions
+under <Repository secrets>

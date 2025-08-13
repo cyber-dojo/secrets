@@ -1,0 +1,50 @@
+[
+  {
+    "days_since_update": 10,
+    "days_to_expiry": 7,
+    "days_to_update": 355,
+    "expires_at": "2025-07-29",
+    "has_github_secret": true,
+    "has_txt_file": true,
+    "is_secret": true,
+    "name": "KOSLI_API_TOKEN_PROD",
+    "repo": "server",
+    "scope": "org",
+    "txt_filename": "txt_root/server/gh-org-kosli-api-token.txt",
+    "type": "Expiring soon",
+    "updated_at": "2025-07-12",
+    "uses_in_repo": null
+  },
+  {
+    "days_since_update": 335,
+    "days_to_expiry": 21,
+    "days_to_update": 30,
+    "expires_at": "2025-08-12",
+    "has_github_secret": true,
+    "has_txt_file": true,
+    "is_secret": true,
+    "name": "SOME_SECRET",
+    "repo": "cli",
+    "scope": "repo",
+    "txt_filename": "txt_root/cli/gh-repo-some-secret.txt",
+    "type": "Expiring soon",
+    "updated_at": "2024-08-21",
+    "uses_in_repo": 1
+  },
+  {
+    "days_since_update": 335,
+    "days_to_expiry": 21,
+    "days_to_update": 30,
+    "expires_at": "2025-08-12",
+    "has_github_secret": true,
+    "has_txt_file": true,
+    "is_secret": true,
+    "name": "SOME_SECRET",
+    "repo": "cli",
+    "scope": "repo",
+    "txt_filename": "txt_root/cli/gh-repo-some-secret.txt",
+    "type": "Aging soon",
+    "updated_at": "2024-08-21",
+    "uses_in_repo": 1
+  }
+]

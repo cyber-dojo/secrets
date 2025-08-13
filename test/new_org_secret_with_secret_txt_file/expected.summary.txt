@@ -1,0 +1,8 @@
+
+1. Secret will soon expire
+    - secret name = THIS_IS_A_NEW_SECRET
+    - scope = org
+    - repo = server
+    - expires in 2 days
+    - see file [txt_root/server/gh-org-this-is-a-new-secret.txt](https://github.com/kosli-dev/secrets/blob/main/txt_root/server/gh-org-this-is-a-new-secret.txt)
+    - see [in GitHub](https://github.com/organizations/kosli-dev/settings/secrets/actions)

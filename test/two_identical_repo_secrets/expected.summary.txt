@@ -1,0 +1,15 @@
+
+1. Secret will soon expire
+    - secret name = KOSLI_API_TOKEN_PROD
+    - scope = org
+    - repo = server
+    - expires in 23 days
+    - see file [txt_root/server/gh-org-kosli-api-token.txt](https://github.com/kosli-dev/secrets/blob/main/txt_root/server/gh-org-kosli-api-token.txt)
+    - see [in GitHub](https://github.com/organizations/kosli-dev/settings/secrets/actions)
+
+2. Secret with no .txt file
+    - secret name = WIBBLE
+    - scope = repo
+    - repo = terraform
+    - suggested filename = txt_root/terraform/gh-repo-wibble.txt
+    - see [in GitHub](https://github.com/kosli-dev/terraform/settings/secrets/actions/WIBBLE)

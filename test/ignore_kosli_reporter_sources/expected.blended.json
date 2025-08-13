@@ -1,0 +1,16 @@
+[
+  {
+    "days_since_update": 14,
+    "days_to_expiry": 2,
+    "expires_at": "2025-07-24",
+    "has_github_secret": true,
+    "has_txt_file": true,
+    "is_secret": false,
+    "name": "KOSLI_REPORTER_SOURCES_AWS_REGION",
+    "repo": "cli",
+    "scope": "repo",
+    "txt_filename": "txt_root/cli/gh-repo-kosli-reporter-sources-aws-region.txt",
+    "updated_at": "2025-07-08"
+  }
+]
+

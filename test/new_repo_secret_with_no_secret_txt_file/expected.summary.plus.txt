@@ -1,0 +1,16 @@
+
+1. Secret will soon expire
+    - secret name = KOSLI_API_TOKEN_PROD
+    - scope = org
+    - repo = server
+    - expires in 7 days
+    - see file [txt_root/server/gh-org-kosli-api-token.txt](https://github.com/kosli-dev/secrets/blob/main/txt_root/server/gh-org-kosli-api-token.txt)
+    - see [in GitHub](https://github.com/organizations/kosli-dev/settings/secrets/actions)
+
+2. Secret with no .txt file
+    - secret name = FOOBAR
+    - scope = repo
+    - repo = cli
+    - suggested filename = txt_root/cli/gh-repo-foobar.txt
+    - occurrences in repo workflows = 1
+    - see [in GitHub](https://github.com/kosli-dev/cli/settings/secrets/actions/FOOBAR)
