@@ -4,8 +4,8 @@
     - scope = org
     - repo = server
     - expires in 23 days
-    - see file [txt_root/server/gh-org-kosli-api-token.txt](https://github.com/kosli-dev/secrets/blob/main/txt_root/server/gh-org-kosli-api-token.txt)
-    - see [in GitHub](https://github.com/organizations/kosli-dev/settings/secrets/actions)
+    - see file [txt_root/server/gh-org-kosli-api-token.txt](https://github.com/cyber-dojo/secrets/blob/main/txt_root/server/gh-org-kosli-api-token.txt)
+    - see [in GitHub](https://github.com/organizations/cyber-dojo/settings/secrets/actions)
 
 2. Secret with no .txt file
     - secret name = WIBBLE
@@ -13,4 +13,4 @@
     - repo = terraform
     - suggested filename = txt_root/terraform/gh-repo-wibble.txt
     - occurrences in repo workflows = 0
-    - see [in GitHub](https://github.com/kosli-dev/terraform/settings/secrets/actions/WIBBLE)
+    - see [in GitHub](https://github.com/cyber-dojo/terraform/settings/secrets/actions/WIBBLE)
