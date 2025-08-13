@@ -1,8 +1,0 @@
-secret-name: KOSLI_API_KEY
-secret-expire: 2026-01-03
-is-secret: true
-
-secret-type: gh-repo
-
-This is an api-token for the Kosli Org named `sofusalbertsen`
-which is a private Org.
