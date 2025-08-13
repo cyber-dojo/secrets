@@ -4,4 +4,4 @@
     - scope = org
     - repo = server
     - suggested filename = txt_root/server/gh-org-this-is-a-new-secret.txt
-    - see [in GitHub](https://github.com/organizations/kosli-dev/settings/secrets/actions)
+    - see [in GitHub](https://github.com/organizations/cyber-dojo/settings/secrets/actions)

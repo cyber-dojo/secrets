@@ -4,5 +4,5 @@
     - scope = org
     - repo = server
     - expires in 2 days
-    - see file [txt_root/server/gh-org-this-is-a-new-secret.txt](https://github.com/kosli-dev/secrets/blob/main/txt_root/server/gh-org-this-is-a-new-secret.txt)
-    - see [in GitHub](https://github.com/organizations/kosli-dev/settings/secrets/actions)
+    - see file [txt_root/server/gh-org-this-is-a-new-secret.txt](https://github.com/cyber-dojo/secrets/blob/main/txt_root/server/gh-org-this-is-a-new-secret.txt)
+    - see [in GitHub](https://github.com/organizations/cyber-dojo/settings/secrets/actions)
