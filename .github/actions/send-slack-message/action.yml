@@ -1,0 +1,37 @@
+name: Send Slack Message
+description: Send Slack Message to secrets-expire channel
+
+inputs:
+  message:
+    description: Slack message to send
+    required: true
+  slack_url:
+    description: Slack URL to send message to
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Send Slack Message
+      shell: bash
+      run: |
+          MESSAGE=$(cat <<EOF
+          {
+             "text": "Daily Kosli GitHub Secrets Checking",
+             "blocks": [
+               {
+                 "type": "section",
+                 "text": {
+                   "type": "mrkdwn",
+                   "text": "${{ inputs.message }}"
+                 }
+               }
+             ]
+          }
+          EOF
+          )
+          curl -X POST \
+            -H 'Content-type: application/json' \
+            --data "${MESSAGE}" \
+            --fail \
+            "${{ inputs.slack_url }}"

@@ -1,0 +1,14 @@
+
+1. Secret with only a .txt file
+    - secret name = KOSLI_API_TOKEN_PROD
+    - scope = org
+    - repo = server
+    - see file [txt_root/server/gh-org-kosli-api-token.txt](https://github.com/kosli-dev/secrets/blob/main/txt_root/server/gh-org-kosli-api-token.txt)
+
+2. Secret will soon expire
+    - secret name = KOSLI_API_TOKEN_PROD
+    - scope = org
+    - repo = server
+    - expires in 7 days
+    - see file [txt_root/server/gh-org-kosli-api-token.txt](https://github.com/kosli-dev/secrets/blob/main/txt_root/server/gh-org-kosli-api-token.txt)
+    - see [in GitHub](https://github.com/organizations/kosli-dev/settings/secrets/actions)

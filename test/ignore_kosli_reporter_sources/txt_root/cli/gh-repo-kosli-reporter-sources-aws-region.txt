@@ -1,0 +1,26 @@
+secret-name: KOSLI_REPORTER_SOURCES_AWS_REGION
+secret-expire: 2025-07-24
+is-secret: false
+
+secret-updated: 2024-11-11
+secret-updated-by: tore
+secret-type: gh-repo
+secret-usage: Token used to upload evidence to Drata.
+
+update-instructions:
+You need admin access in Drata to do this.
+Go to https://app.drata.com/account-settings/api-keys
+Press [Create API Key]
+Name: UpdateEvidence
+Expire: 12 Months
+Scopes: Access: Custom -> Select the following:
+  Evidence Library
+    List Evidence: tick
+    Add Evidence: tick
+    Update Evidence: tick
+Press [Save]
+Copy the new API key
+
+Go to https://github.com/organizations/kosli-dev/settings/secrets/actions
+and update the secret.
+Update the secret-expire and secret-updated and secret-updated-by details in this file. 

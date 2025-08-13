@@ -1,0 +1,24 @@
+
+1. Secret with no .txt file
+    - secret name = LIST_ORG_AND_REPO_SECRETS
+    - scope = repo
+    - repo = server
+    - suggested filename = txt_root/server/gh-repo-list-org-and-repo-secrets.txt
+    - occurrences in repo workflows = 0
+    - see [in GitHub](https://github.com/kosli-dev/server/settings/secrets/actions/LIST_ORG_AND_REPO_SECRETS)
+
+2. Secret will soon expire
+    - secret name = LIST_ORG_AND_REPO_SECRETS
+    - scope = repo
+    - repo = secrets
+    - expires in 19 days
+    - occurrences in repo workflows = 0
+    - see file [txt_root/secrets/gh-repo-list-org-and-repo-secrets.txt](https://github.com/kosli-dev/secrets/blob/main/txt_root/secrets/gh-repo-list-org-and-repo-secrets.txt)
+    - see [in GitHub](https://github.com/kosli-dev/secrets/settings/secrets/actions/LIST_ORG_AND_REPO_SECRETS)
+
+3. Secret with only a .txt file
+    - secret name = READ_GH_ISSUES
+    - scope = repo
+    - repo = server
+    - occurrences in repo workflows = 0
+    - see file [txt_root/server/gh-repo-read-gh-issues.txt](https://github.com/kosli-dev/secrets/blob/main/txt_root/server/gh-repo-read-gh-issues.txt)

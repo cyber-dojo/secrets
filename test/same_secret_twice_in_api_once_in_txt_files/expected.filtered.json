@@ -1,0 +1,50 @@
+[
+  {
+    "days_since_update": 11,
+    "days_to_expiry": 26826,
+    "days_to_update": 354,
+    "expires_at": "2099-01-01",
+    "has_github_secret": true,
+    "has_txt_file": false,
+    "is_secret": true,
+    "name": "LIST_ORG_AND_REPO_SECRETS",
+    "repo": "server",
+    "scope": "repo",
+    "txt_filename": "txt_root/server/gh-repo-list-org-and-repo-secrets.txt",
+    "type": "No .txt file",
+    "updated_at": "2025-07-11",
+    "uses_in_repo": null
+  },
+  {
+    "days_since_update": 1,
+    "days_to_expiry": 19,
+    "days_to_update": 364,
+    "expires_at": "2025-08-10",
+    "has_github_secret": true,
+    "has_txt_file": true,
+    "is_secret": true,
+    "name": "LIST_ORG_AND_REPO_SECRETS",
+    "repo": "secrets",
+    "scope": "repo",
+    "txt_filename": "txt_root/secrets/gh-repo-list-org-and-repo-secrets.txt",
+    "type": "Expiring soon",
+    "updated_at": "2025-07-21",
+    "uses_in_repo": null
+  },
+  {
+    "days_since_update": null,
+    "days_to_expiry": 64,
+    "days_to_update": null,
+    "expires_at": "2025-09-24",
+    "has_github_secret": false,
+    "has_txt_file": true,
+    "is_secret": true,
+    "name": "READ_GH_ISSUES",
+    "repo": "server",
+    "scope": "repo",
+    "txt_filename": "txt_root/server/gh-repo-read-gh-issues.txt",
+    "type": "No GitHub secret",
+    "updated_at": null,
+    "uses_in_repo": null
+  }
+]

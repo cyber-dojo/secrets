@@ -1,0 +1,41 @@
+[
+  {
+    "days_since_update": 11,
+    "days_to_expiry": 26826,
+    "expires_at": "2099-01-01",
+    "has_github_secret": true,
+    "has_txt_file": false,
+    "is_secret": true,
+    "name": "LIST_ORG_AND_REPO_SECRETS",
+    "repo": "server",
+    "scope": "repo",
+    "txt_filename": null,
+    "updated_at": "2025-07-11"
+  },
+  {
+    "days_since_update": 1,
+    "days_to_expiry": 19,
+    "expires_at": "2025-08-10",
+    "has_github_secret": true,
+    "has_txt_file": true,
+    "is_secret": true,
+    "name": "LIST_ORG_AND_REPO_SECRETS",
+    "repo": "secrets",
+    "scope": "repo",
+    "txt_filename": "txt_root/secrets/gh-repo-list-org-and-repo-secrets.txt",
+    "updated_at": "2025-07-21"
+  },
+  {
+    "days_since_update": null,
+    "days_to_expiry": 64,
+    "expires_at": "2025-09-24",
+    "has_github_secret": false,
+    "has_txt_file": true,
+    "is_secret": true,
+    "name": "READ_GH_ISSUES",
+    "repo": "server",
+    "scope": "repo",
+    "txt_filename": "txt_root/server/gh-repo-read-gh-issues.txt",
+    "updated_at": null
+  }
+]

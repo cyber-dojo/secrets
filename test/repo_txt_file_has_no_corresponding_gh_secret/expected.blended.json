@@ -1,0 +1,28 @@
+[
+  {
+    "days_since_update": 14,
+    "days_to_expiry": 7,
+    "expires_at": "2025-07-29",
+    "has_github_secret": true,
+    "has_txt_file": true,
+    "is_secret": true,
+    "name": "KOSLI_API_TOKEN_PROD",
+    "repo": "server",
+    "scope": "org",
+    "txt_filename": "txt_root/server/gh-org-kosli-api-token.txt",
+    "updated_at": "2025-07-08"
+  },
+  {
+    "days_since_update": null,
+    "days_to_expiry": 26826,
+    "expires_at": "never",
+    "has_github_secret": false,
+    "has_txt_file": true,
+    "is_secret": true,
+    "name": "THIS_IS_A_NEW_SECRET",
+    "repo": "cli",
+    "scope": "repo",
+    "txt_filename": "txt_root/cli/gh-repo-this-is-a-new-secret.txt",
+    "updated_at": null
+  }
+]

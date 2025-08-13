@@ -1,0 +1,24 @@
+
+1. Secret will soon expire
+    - secret name = KOSLI_API_TOKEN_PROD
+    - scope = org
+    - repo = server
+    - expires in 7 days
+    - see file [txt_root/server/gh-org-kosli-api-token.txt](https://github.com/kosli-dev/secrets/blob/main/txt_root/server/gh-org-kosli-api-token.txt)
+    - see [in GitHub](https://github.com/organizations/kosli-dev/settings/secrets/actions)
+
+2. Secret will soon expire
+    - secret name = SOME_SECRET
+    - scope = repo
+    - repo = cli
+    - expires in 21 days
+    - see file [txt_root/cli/gh-repo-some-secret.txt](https://github.com/kosli-dev/secrets/blob/main/txt_root/cli/gh-repo-some-secret.txt)
+    - see [in GitHub](https://github.com/kosli-dev/cli/settings/secrets/actions/SOME_SECRET)
+
+3. Secret will soon need updating
+    - secret name = SOME_SECRET
+    - scope = repo
+    - repo = cli
+    - update due in 30 days
+    - see file [txt_root/cli/gh-repo-some-secret.txt](https://github.com/kosli-dev/secrets/blob/main/txt_root/cli/gh-repo-some-secret.txt)
+    - see [in GitHub](https://github.com/kosli-dev/cli/settings/secrets/actions/SOME_SECRET)
