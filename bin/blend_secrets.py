@@ -117,7 +117,7 @@ def blend_secrets(api_secrets_filename, txt_root, date_today):
             "name": secret["name"],
             "updated_at": updated_at,
             "days_since_update": days_diff(updated_at, date_today),
-            "repo": "server",
+            "repo": "cyber-dojo", # double check if all org secrets are in cyber-dojo repo
             "scope": "org",
             "has_github_secret": True,
             "has_txt_file": False,
