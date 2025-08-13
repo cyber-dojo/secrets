@@ -1,0 +1,12 @@
+secret-name: KOSLI_JIRA_USERNAME
+secret-expire: 2025-09-27
+is-secret: false
+
+secret-updated: 2024-09-27
+secret-updated-by: tore
+secret-type: gh-repo
+secret-usage: Used to test Jira integration
+
+update-instructions:
+This is the email that has to match the person who make the
+KOSLI_JIRA_API_TOKEN

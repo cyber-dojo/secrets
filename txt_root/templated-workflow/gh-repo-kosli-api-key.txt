@@ -1,0 +1,12 @@
+secret-name: KOSLI_API_KEY
+secret-expire: never
+is-secret: true
+
+secret-updated-by:
+secret-type: gh-repo
+
+update-instructions:
+API key is from https://app.kosli.com/kosli-public/settings/service-accounts#templated-workflow
+
+Go to https://github.com/kosli-dev/templated-workflow/settings/secrets/actions
+under <Repository secrets>

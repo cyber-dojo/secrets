@@ -1,0 +1,16 @@
+secret-name: KOSLI_API_TOKEN
+secret-expire: 2026-08-02
+is-secret: true
+
+secret-updated: 2025-08-07
+secret-updated-by: JJ
+secret-type: gh-repo
+
+Workflows in the 'WaveApp' repo make `kosli attest` calls the Kosli Org called
+  kosli
+
+This Kosli Org has a service-account called
+  wave-app
+
+This service-account has an API key called
+  github

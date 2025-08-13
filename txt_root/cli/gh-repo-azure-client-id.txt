@@ -1,0 +1,10 @@
+secret-name: AZURE_CLIENT_ID
+secret-expire: never
+is-secret: false
+
+secret-updated:
+secret-updated-by:
+secret-type: gh-repo
+secret-usage: See gh-repo-azure-client-secret.txt
+
+update-instructions:

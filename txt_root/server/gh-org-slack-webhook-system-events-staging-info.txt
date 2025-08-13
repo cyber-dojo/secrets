@@ -1,0 +1,10 @@
+secret-name: SLACK_WEBHOOK_SYSTEM_EVENTS_STAGING_INFO
+secret-expire: never
+is-secret: false
+
+secret-updated: 2021-01-01
+secret-updated-by: sami
+secret-type: gh-org
+secret-usage: Used in server repo to send Slack notification when there is a CI failure
+
+This is a Slack webhook URL and so not deemed a "real" secret.

@@ -1,0 +1,19 @@
+secret-name: KOSLI_PUBLIC_API_TOKEN
+secret-expire: never
+is-secret: true
+
+secret-updated: ??
+secret-updated-by: ??
+secret-type: gh-repo
+
+Workflows in the 'code-review-demo' repo makes kosli attestations to the Kosli Org called
+  kosli-public
+
+This Kosli Org has a service-account called
+  code-review-demo-reporter
+
+This service-account has two API keys called
+  'code-review-action test'
+  'used for reporting from GH actions'
+
+These API tokens never expire.

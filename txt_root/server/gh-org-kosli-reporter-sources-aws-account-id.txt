@@ -1,0 +1,22 @@
+secret-name: KOSLI_REPORTER_SOURCES_AWS_ACCOUNT_ID
+secret-expire: never
+is-secret: false
+
+secret-updated: 
+secret-updated-by: artem
+secret-type: gh-org
+secret-usage:
+terraform-aws-evidence-reporter/.github/workflows/main.yml
+  to upload lambda package
+terraform-aws-kosli-reporter/.github/workflows/main.yml
+  to upload lambda package
+
+update-instructions: should not be updated
+Get new API key from ???
+Go to https://github.com/organizations/kosli-dev/settings/secrets/actions
+and update the secret
+
+This is not really a secret, but they contain aws account id, the name of the
+bucket and aws region. And if we move them to the variables they will be visible
+in the public repository. I just don't want to show everyone our resource IDs.
+These IDs are not enough to hack us, but I don't want somebody even try doing it.

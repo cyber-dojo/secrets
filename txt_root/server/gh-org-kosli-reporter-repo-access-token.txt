@@ -1,0 +1,46 @@
+secret-name: KOSLI_REPORTER_REPO_ACCESS_TOKEN
+secret-expire: 2025-11-05
+is-secret: true
+
+secret-updated: 2025-08-07
+secret-updated-by: JJ
+secret-type: gh-org
+
+secret-usage:
+cli/.github/workflows/release.yml
+  to trigger pipelines in the terraform-aws-kosli-reporter and terraform-aws-evidence-reporter repos
+  to upload lambda packages to S3 buckets
+terraform-aws-evidence-reporter/.github/workflows/main.yml
+  to trigger pipeline in the kosli-dev/terraform-evidence-reporter repo
+  to deploy the evidence-reporter to the Kosli environments
+terraform-aws-kosli-reporter/.github/workflows/main.yml
+  to trigger pipeline in the kosli-dev/kosli-reporter repo
+  to deploy the kosli-reporter to the Kosli environments
+
+update-instructions:
+Go to the Developer's Github profile https://github.com/settings/profile
+  -> Settings
+  -> Developer settings
+  -> Personal access tokens
+  -> New fine-grained personal access token
+  -> Generate new token
+
+  Token name: KOSLI_REPORTER_REPO_ACCESS_TOKEN
+  Description: ...
+  Resource owner: kosli-dev
+  Expiration: ...
+
+  Repository-access:
+    Only select repositories
+       cli
+       terraform-aws-evidence-reporter
+       terraform-aws-kosli-reporter
+
+  Needed permissions:
+    Repositories:
+      Contents: Read and Write access to code
+      Metadata: Read access to metadata
+
+Go to https://github.com/organizations/kosli-dev/settings/secrets/actions
+and update the secret.
+

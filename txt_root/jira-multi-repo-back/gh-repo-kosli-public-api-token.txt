@@ -1,0 +1,21 @@
+secret-name: KOSLI_PUBLIC_API_TOKEN
+secret-expire: 2026-06-14
+is-secret: true
+
+secret-updated: 2024-09-24
+secret-updated-by: tore
+secret-type: gh-repo
+
+The workflow in the 'jira-multi-repo-back' repo makes kosli attestations to the Kosli Org called
+  kosli-public
+
+This Kosli Org has a service-account called
+  multi-project-reporter
+
+This service-account has an API key called (sic)
+  Created-2025-06-19
+
+This API key is source of the GitHub secret called KOSLI_PUBLIC_API_TOKEN in three repos:
+  jira-multi-repo-release
+  jira-multi-repo-front
+  jira-multi-repo-back

@@ -1,0 +1,14 @@
+secret-name: AWS_ACCESS_KEY_ID
+secret-expire: 2025-09-26
+is-secret: false
+
+secret-updated: 2024-09-26
+secret-updated-by: Artem Zhelezov
+secret-type: gh-repo
+secret-usage:
+The secret is used by terraform to manage AWS resources.
+
+update-instructions:
+1. Go to AWS console, development account (id 772819027869) -> IAM service -> "example-report-terraform-state" user -> Security credentials -> Create Access key
+2. Command Line Interface -> Create access key
+3. Copy the new secret value and put it to the https://github.com/kosli-dev/example-report-terraform-state/settings/secrets/actions under <Repository secrets>

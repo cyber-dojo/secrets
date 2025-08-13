@@ -1,0 +1,27 @@
+secret-name: CLEAR_GH_ACTIONS_CACHE
+secret-expire: 2025-09-24
+is-secret: true
+
+secret-updated: 2024-09-24
+secret-updated-by: tore
+secret-type: gh-repo
+secret-usage: Used to clear Github action cache
+
+update-instructions:
+Go to the Developer's Github profile
+  -> Settings
+  -> Developer settings
+  -> Personal access tokens
+  -> New fine-grained personal access token
+  -> Generate new token
+Token name: gh-server-clear-gh-actions-cache
+Resource owner: kosli-dev
+Expiration: one year
+Description: Clear Github Action cache
+Repository access: Only select repositories - kosli-dev/server
+Permissions:
+  Repository permissions - Actions - Access: Read and write
+
+
+Go to https://github.com/kosli-dev/server/settings/secrets/actions
+under <Repository secrets>

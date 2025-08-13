@@ -1,0 +1,16 @@
+secret-name: CYBERDOJO_KOSLI_APIKEY
+secret-expire: 2026-08-02
+is-secret: true
+
+secret-updated: 2025-08-07
+secret-updated-by: JJ
+secret-type: gh-repo
+
+Workflows in the 'opa-examples' repo make `kosli get` calls the Kosli Org called
+  cyber-dojo
+
+This Kosli Org has a read-only service-account called
+  opa-examples
+
+This service-account has an API key called
+  github

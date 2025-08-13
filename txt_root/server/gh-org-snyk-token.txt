@@ -1,0 +1,29 @@
+secret-name: SNYK_TOKEN
+secret-expire: 2025-09-24
+is-secret: true
+
+secret-updated: 2024-09-24
+secret-updated-by: tore
+secret-type: gh-org
+secret-usage: Token necessary to run Snyk-scanning of docker images in GH actions.
+Used by several GitHub actions in server and cli.
+
+update-instructions:
+Kosli has a free snyk account https://app.snyk.io/org/kosli-njSTUzmgmXbHkuzQC4fgu2
+As a free customer we do not have access to Service accounts so we have to use
+a private API key in the CI jobs.
+
+Go to snyk account settings page
+  https://app.snyk.io/account
+Select <Revoke & Regenerate> It will generate a new key. We can not set an expire
+date on the key it self, but set the expire to 12 month from now in this file.
+
+Also press the <Settings> <Snyk Code> and make sure the "Enable Snyk Code" is enabled.
+
+Since your private snyk-token has changed you also need to run this in a terminal
+on your machine:
+  snyk auth
+
+Go to https://github.com/organizations/kosli-dev/settings/secrets/actions
+and update the secret.
+
