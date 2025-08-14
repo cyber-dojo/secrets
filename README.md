@@ -1,6 +1,6 @@
 # Overview
 
-There are three kinds of secrets:
+This repository handles:
 - GitHub secrets (stored in GitHub and handled by *this* repo)
 
 The GitHub secrets API provides information on when each secret was last *updated* in GitHub.
