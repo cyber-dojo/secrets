@@ -5,7 +5,7 @@ on:
 
 env:
   KOSLI_ORG: cyber-dojo  # Org name in https://app.kosli.com
-  KOSLI_HOST: "https://app.kosli.com,https://staging.app.kosli.com"
+  KOSLI_HOST: ${{ vars.KOSLI_HOST }}
   KOSLI_API_TOKEN: '${{ secrets.KOSLI_API_TOKEN }}'
 
 jobs:

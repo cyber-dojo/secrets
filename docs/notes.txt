@@ -1,0 +1,9 @@
+
+# NOTES
+
+o) There were cases where a repo had a gh-repo-*.txt file but the secret inside it
+   was actually an Org-level secret. It would be nice if we could auto-diagnose this error?
+
+o) We could add a check for stale secrets, that exist in GitHub and have a .txt file
+   but are never used in any repo.
+
