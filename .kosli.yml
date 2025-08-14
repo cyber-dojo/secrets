@@ -1,0 +1,10 @@
+version: 1
+
+trail:
+  attestations:
+    - name: pull-request
+      type: pull_request
+    - name: unit-tests
+      type: junit
+    - name: blended-secrets
+      type: custom:secrets
