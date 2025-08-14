@@ -8,9 +8,9 @@
     "has_txt_file": false,
     "is_secret": true,
     "name": "THIS_IS_A_NEW_SECRET",
-    "repo": "server",
+    "repo": "secrets",
     "scope": "org",
-    "txt_filename": "txt_root/server/gh-org-this-is-a-new-secret.txt",
+    "txt_filename": "txt_root/secrets/gh-org-this-is-a-new-secret.txt",
     "type": "No .txt file",
     "updated_at": "2025-07-08",
     "uses_in_repo": null
