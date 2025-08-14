@@ -1,5 +1,5 @@
 name: Send Slack Message
-description: Send Slack Message to secrets-expire channel
+description: Send Slack Message to cyber-dojo-alerts channel
 
 inputs:
   message:
@@ -17,7 +17,7 @@ runs:
       run: |
           MESSAGE=$(cat <<EOF
           {
-             "text": "Daily Kosli GitHub Secrets Checking",
+             "text": "Daily Cyber-Dojo GitHub Secrets Checking",
              "blocks": [
                {
                  "type": "section",

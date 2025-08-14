@@ -117,7 +117,7 @@ def blend_secrets(api_secrets_filename, txt_root, date_today):
             "name": secret["name"],
             "updated_at": updated_at,
             "days_since_update": days_diff(updated_at, date_today),
-            "repo": "server", # Change to correct repo
+            "repo": "secrets", # Change to correct repo
             "scope": "org",
             "has_github_secret": True,
             "has_txt_file": False,
@@ -146,11 +146,11 @@ def blend_secrets(api_secrets_filename, txt_root, date_today):
             })
 
     # Process txt_root dir Org level secrets
-    known_org_secrets = get_txt_secrets(txt_root, 'server', "gh-org-*.txt")
+    known_org_secrets = get_txt_secrets(txt_root, 'secrets', "gh-org-*.txt")
     for secret_name, value in known_org_secrets.items():
         expiry_date = value['expiry_date']
         is_secret = value['is_secret']
-        index = find_secret_index(output, secret_name, "org", "server")
+        index = find_secret_index(output, secret_name, "org", "secrets")
         if index is not None:
             entry = output[index]
             entry["has_txt_file"] = True
@@ -161,7 +161,7 @@ def blend_secrets(api_secrets_filename, txt_root, date_today):
         else:
             output.append({
                 "name": secret_name,
-                "repo": "server",
+                "repo": "secrets",
                 "scope": "org",
                 "has_github_secret": False,
                 "has_txt_file": True,
