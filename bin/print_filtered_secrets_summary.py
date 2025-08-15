@@ -69,7 +69,7 @@ def print_secrets(filtered_filename):
                 f"    - occurrences in repo workflows = {count}"
             ])
 
-        if type != "No .txt file" and type is not None:
+        if type != "No .txt file" and txt_filename is not None:
             lines.extend([see_file_message(txt_filename)])
 
         if type != "No GitHub secret":
