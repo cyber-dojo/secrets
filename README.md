@@ -20,6 +20,12 @@ The file `.github/workflows/check-secrets.yml` is a daily cronjob workflow that:
    - Includes a link to the docs/README.md file containing detailed instructions
 - Sends a Slack message to the #cyber-dojo-alerts channel for team visibility
    - Includes a link to the workflow-run
+- Makes attestations to the [secrets](https://app.kosli.com/cyber-dojo/flows/secrets/trails/) Flow in the `kosli` org.
+   - Uses a custom-attestation-type. See [workflow](.github/workflows/create-custom-attestation.yml)
+     and [schema](docs/custom-attestation-type-schema.json).
+   - Secrets are non-compliant in their Trail if they are within 7 days of their required annual rotation,
+     or within 7 days of expiring.
+
 
 # The Workflow
 
@@ -37,6 +43,7 @@ Blends data from the GitHub Secrets API and the secrets .txt files into a JSON f
     "expires_at": "2099-01-01",
     "has_github_secret": true,
     "has_txt_file": false,
+    "is_secret": true,
     "name": "THIS_IS_A_NEW_SECRET",
     "repo": "secrets",
     "scope": "org", 
@@ -49,12 +56,13 @@ Blends data from the GitHub Secrets API and the secrets .txt files into a JSON f
 ## 2. `bin/filter_secrets.py`
 
 Takes the output of `blend_secrets.py` as an argument and filters out only those needing attention.
+This program has two hard-wired constants:
+- ROTATION_DAYS = 365, how often GitHub secret must be updated 
+- ALERT_WINDOW_DAYS = 30, see above
 
 ## 3. `bin/print_filtered_secrets_summary.py`
 
-Takes the output of `filter_secrets.py` and prints each secret needing attention in a simple non-JSON format.
-
-**Example Output:**
+Takes the output of `filter_secrets.py` and prints each secret needing attention in a simple Markdown format.
 
 For each secret, a count is printed of the number of times the secret
 occurs (lexically) in any file under the `.github/workflows/` dir of the secret's repo.
@@ -62,6 +70,8 @@ occurs (lexically) in any file under the `.github/workflows/` dir of the secret'
 Note: A count of zero typically indicates:
 - the secret is dead, or 
 - the .txt file has the [wrong scope](https://github.com/cyber-dojo/secrets/blob/main/docs/README.md) 
+
+**Example Output:**
 
 ```txt
 1. Secret without a .txt file
