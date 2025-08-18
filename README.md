@@ -1,7 +1,6 @@
 # Overview
 
-This repository handles:
-- GitHub secrets (stored in GitHub and handled by *this* repo)
+This repository handles rotation of GitHub secrets.
 
 The GitHub secrets API provides information on when each secret was last *updated* in GitHub.
 The secret in GitHub might be an api-token (to some service) and it never expires. 
@@ -20,7 +19,7 @@ The file `.github/workflows/check-secrets.yml` is a daily cronjob workflow that:
    - Includes a link to the docs/README.md file containing detailed instructions
 - Sends a Slack message to the #cyber-dojo-alerts channel for team visibility
    - Includes a link to the workflow-run
-- Makes attestations to the [secrets](https://app.kosli.com/cyber-dojo/flows/secrets/trails/) Flow in the `kosli` org.
+- Makes attestations to the [secrets](https://app.kosli.com/cyber-dojo/flows/secrets/trails/) Flow in the `cyber-dojo` org.
    - Uses a custom-attestation-type. See [workflow](.github/workflows/create-custom-attestation.yml)
      and [schema](docs/custom-attestation-type-schema.json).
    - Secrets are non-compliant in their Trail if they are within 7 days of their required annual rotation,
