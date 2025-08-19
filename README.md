@@ -8,7 +8,7 @@ Such a secret must still be updated at least annually.
 
 Each [.txt file](https://github.com/cyber-dojo/secrets/tree/main/docs#secrets-scope-and-txt-filenames) in the `txt_root/` sub-dirs provides information about a secret; its *expiry* date, and how to update it.
 
-The file `.github/workflows/check-secrets.yml` is a daily cronjob workflow that:
+The file [.github/workflows/check-secrets.yml](.github/workflows/check-secrets.yml) is a daily cronjob workflow that:
 - Combines data from the GitHub Secrets API and the .txt files.
 - Finds secrets in all repos that:
    - Are within 30 days of their required annual rotation, or  
@@ -19,7 +19,7 @@ The file `.github/workflows/check-secrets.yml` is a daily cronjob workflow that:
    - Includes a link to the docs/README.md file containing detailed instructions
 - Sends a Slack message to the #cyber-dojo-alerts channel for team visibility
    - Includes a link to the workflow-run
-- Makes attestations to the [secrets](https://app.kosli.com/cyber-dojo/flows/secrets/trails/) Flow in the `cyber-dojo` org.
+- Makes attestations to the [secrets](https://app.kosli.com/cyber-dojo/flows/secrets/trails/) Flow in the `cyber-dojo` Kosli org.
    - Uses a custom-attestation-type. See [workflow](.github/workflows/create-custom-attestation.yml)
      and [schema](docs/custom-attestation-type-schema.json).
    - Secrets are non-compliant in their Trail if they are within 7 days of their required annual rotation,

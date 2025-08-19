@@ -1,0 +1,20 @@
+secret-name: SONARCLOUD_TOKEN
+secret-expire: 2026-08-19
+is-secret: true
+
+secret-updated: 2025-08-19
+secret-updated-by: Faye
+secret-type: gh-repo
+
+secret-usage:
+...
+
+Update-instructions:
+...
+
+
+Update-instructions:
+Go to https://github.com/cyber-dojo/secrets/settings/secrets/actions/SONARCLOUD_TOKEN and set the value.
+Click [enter a new value]
+Set the new value.
+Click [Save changes]
