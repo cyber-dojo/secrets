@@ -1,0 +1,23 @@
+secret-name: SONARCLOUD_TOKEN
+secret-expire: 2026-08-19
+is-secret: true
+
+secret-updated: 2025-08-19
+secret-updated-by: Faye
+secret-type: gh-repo
+
+secret-usage:
+Used to authenticate with SonarQube's Github scan action. 
+
+Update-instructions:
+Go to https://sonarcloud.io/projects and click on your user icon in the top right-hand corner.
+Go to My Account -> Security.
+Find the token named 'Analyze "differ"', and click the Revoke button on the right to delete.
+Create a new token with the name 'Analyze "differ"' and click Generate Token. Copy the new value.
+
+
+Update-instructions:
+Go to https://github.com/cyber-dojo/secrets/settings/secrets/actions/SONARCLOUD_TOKEN and set the value.
+Click [enter a new value]
+Set the new value.
+Click [Save changes]
