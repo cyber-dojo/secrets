@@ -9,7 +9,7 @@ Such a secret must still be updated at least annually.
 Each [.txt file](https://github.com/cyber-dojo/secrets/tree/main/docs#secrets-scope-and-txt-filenames) in the `txt_root/` sub-dirs provides information about a secret; its *expiry* date, and how to update it.
 
 The file [.github/workflows/check-secrets.yml](.github/workflows/check-secrets.yml) is a daily cronjob workflow that:
-- Combines data from the GitHub Secrets API and the .txt files.
+- Combines data from the GitHub Secrets API (ignoring archived repos) and the .txt files.
 - Finds secrets in all repos that:
    - Are within 30 days of their required annual rotation, or  
    - Are within 30 days of expiring, or

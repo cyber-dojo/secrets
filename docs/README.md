@@ -25,7 +25,9 @@ You must either:
 - Create a `txt_root/{REPO_NAME}/gh-repo-{SECRET_NAME}.txt` file (see below), for a Repo-scope secret, or
 - Create a `txt_root/server/gh-org-{SECRET_NAME}.txt` file (see below), for an Org-scope secret, or
 - Fix an incorrectly scoped .txt file (see below), or
-- Delete the GitHub secret (if the secret is unused)
+- Delete the GitHub secret (if the secret is unused), or
+- Archive the repo (if the repo is unused)
+
 
 ## Secret with only a .txt file
 Eg
@@ -66,7 +68,8 @@ The given secret:
 You must either:
 - Generate a new secret - see instructions in its .txt file, update the line `secret-expire:`, 
 update the secret in GitHub, or
-- Delete both the GitHub secret and the .txt file (if the secret is unused)
+- Delete both the GitHub secret and the .txt file (if the secret is unused), or
+- Archive the repo (if the repo is unused)
 
 
 ## Secret will soon expire
@@ -88,7 +91,8 @@ The given secret:
 You must either:
 - Generate a new secret - see instructions in its .txt file, update the line `secret-expire:`, 
 update the secret in GitHub, or
-- Delete both the GitHub secret and the .txt file (if the secret is unused)
+- Delete both the GitHub secret and the .txt file (if the secret is unused), or
+- Archive the repo (if the repo is unused)
 
 
 # Secrets Scope and .txt filenames
