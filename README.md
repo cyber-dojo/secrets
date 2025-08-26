@@ -1,4 +1,4 @@
-[![Github Action (main)](https://github.com/cyber-dojo/secrets/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/cyber-dojo/secrets/actions)
+[![Github Action (main)](https://github.com/cyber-dojo/secrets/actions/workflows/check-secrets.yml/badge.svg?branch=main)](https://github.com/cyber-dojo/secrets/actions/workflows/check-secrets.yml)
 
 # Overview
 
