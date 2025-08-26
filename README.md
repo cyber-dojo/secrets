@@ -1,12 +1,15 @@
+[![Github Action (main)](https://github.com/cyber-dojo/secrets/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/cyber-dojo/secrets/actions)
+
 # Overview
 
-This repository handles rotation of GitHub secrets.
+This repository handles checking for rotation of GitHub Action secrets in the cyber-dojo GitHub org.
 
 The GitHub secrets API provides information on when each secret was last *updated* in GitHub.
 The secret in GitHub might be an api-token (to some service) and it never expires. 
-Such a secret must still be updated at least annually.
+Such a secret must still be updated at least annually. Note that GitHub secrets are sometimes used to store values that are 
+[not "genuine" secrets](https://github.com/kosli-dev/secrets/blob/main/docs/README.md#secrets-that-are-not-secrets).
 
-Each [.txt file](https://github.com/cyber-dojo/secrets/tree/main/docs#secrets-scope-and-txt-filenames) in the `txt_root/` sub-dirs provides information about a secret; its *expiry* date, and how to update it.
+Each [.txt file](https://github.com/cyber-dojo/secrets/tree/main/docs#secrets-scope-and-txt-filenames) in the `txt_root/` sub-dirs provides information about a secret's *expiry* date, and how to update it.
 
 The file [.github/workflows/check-secrets.yml](.github/workflows/check-secrets.yml) is a daily cronjob workflow that:
 - Combines data from the GitHub Secrets API (ignoring archived repos) and the .txt files.
@@ -16,14 +19,15 @@ The file [.github/workflows/check-secrets.yml](.github/workflows/check-secrets.y
    - Are known GitHub secrets but don't have a corresponding .txt file, or
    - Have a .txt file but are not a GitHub secret
 - Generates a report of secrets that need attention in the workflow-run step-summary
-   - Includes a link to the docs/README.md file containing detailed instructions
+   - Includes a link to the [docs/README.md](docs/README.md) file containing detailed instructions
 - Sends a Slack message to the #cyber-dojo-alerts channel for team visibility
    - Includes a link to the workflow-run
 - Makes attestations to the [secrets](https://app.kosli.com/cyber-dojo/flows/secrets/trails/) Flow in the `cyber-dojo` Kosli org.
    - Uses a custom-attestation-type. See [workflow](.github/workflows/create-custom-attestation.yml)
      and [schema](docs/custom-attestation-type-schema.json).
-   - Secrets are non-compliant in their Trail if they are within 7 days of their required annual rotation,
-     or within 7 days of expiring.
+   - Secrets are non-compliant in their Trail if they are:
+     - within 7 days of their annual rotation, or
+     - within 7 days of expiring.
 
 
 # The Workflow
