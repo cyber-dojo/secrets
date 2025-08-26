@@ -72,7 +72,7 @@ occurs (lexically) in any file under the `.github/workflows/` dir of the secret'
 
 Note: A count of zero typically indicates:
 - the secret is dead, or 
-- the .txt file has the [wrong scope](https://github.com/cyber-dojo/secrets/blob/main/docs/README.md) 
+- the .txt file has the [wrong scope](docs/README.md#incorrectly-scoped-txt-filenames) 
 
 **Example Output:**
 
