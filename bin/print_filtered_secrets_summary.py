@@ -50,18 +50,12 @@ def print_secrets(filtered_filename):
                 f"    - secret name = {name}",
                 f"    - scope = {scope}",
                 f"    - repo = {repo}",
-                f"    - expires in {secret['days_to_expiry']} days",
+                f"    - expires in {secret['days_to_expiry']} days"
             ])
-
-        else:
-            assert type == "Aging soon", type
-            lines.extend([
-                f"{index}. Secret will soon need updating",
-                f"    - secret name = {name}",
-                f"    - scope = {scope}",
-                f"    - repo = {repo}",
-                f"    - update due in {secret['days_to_update']} days"
-            ])
+            if secret['days_to_update'] is not None:
+                lines.extend([
+                    f"    - update due in {secret['days_to_update']} days"
+                ])
 
         count = secret['uses_in_repo']
         if scope == "repo" and count is not None:
@@ -80,16 +74,16 @@ def print_secrets(filtered_filename):
 
 
 def see_file_message(txt_filename):
-    url = f"https://github.com/cyber-dojo/secrets/blob/main/{txt_filename}"
+    url = f"https://github.com/kosli-dev/secrets/blob/main/{txt_filename}"
     return f"    - see file [{txt_filename}]({url})"
 
 
 def see_gh_message(scope, repo, name):
     if scope == "org":
-        url = "https://github.com/organizations/cyber-dojo/settings/secrets/actions"
+        url = "https://github.com/organizations/kosli-dev/settings/secrets/actions"
     else:
         assert scope == "repo", scope
-        url = f"https://github.com/cyber-dojo/{repo}/settings/secrets/actions/{name}"
+        url = f"https://github.com/kosli-dev/{repo}/settings/secrets/actions/{name}"
 
     return f"    - see [in GitHub]({url})"
 

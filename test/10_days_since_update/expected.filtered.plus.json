@@ -8,9 +8,9 @@
     "has_txt_file": true,
     "is_secret": true,
     "name": "KOSLI_API_TOKEN_PROD",
-    "repo": "secrets",
+    "repo": "server",
     "scope": "org",
-    "txt_filename": "txt_root/secrets/gh-org-kosli-api-token.txt",
+    "txt_filename": "txt_root/server/gh-org-kosli-api-token.txt",
     "type": "Expiring soon",
     "updated_at": "2025-07-12",
     "uses_in_repo": null

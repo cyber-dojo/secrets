@@ -9,7 +9,5 @@ curl -L \
   -H "Authorization: Bearer ${BEARER}" \
   -H "X-GitHub-Api-Version: 2022-11-28" \
   --fail \
+  --silent \
   "https://api.github.com/${URL}"
-
-
-#  --silent \

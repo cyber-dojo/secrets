@@ -59,15 +59,12 @@ def filter_secrets(blended_filename, repos_root):
             copy["uses_in_repo"] = uses_in_repo(scope, repos_root, repo, name)
             output.append(copy)
 
-        if secret['days_to_expiry'] <= ALERT_WINDOW_DAYS:
+        expiring = secret['days_to_expiry'] <= ALERT_WINDOW_DAYS
+        aging = has_github_secret is True and (secret["days_since_update"] >= (ROTATION_DAYS - ALERT_WINDOW_DAYS))
+
+        if expiring or aging:
             copy = deepcopy(secret)
             copy["type"] = "Expiring soon"
-            copy["uses_in_repo"] = uses_in_repo(scope, repos_root, repo, name)
-            output.append(copy)
-
-        if has_github_secret is True and (secret["days_since_update"] >= (ROTATION_DAYS - ALERT_WINDOW_DAYS)):
-            copy = deepcopy(secret)
-            copy["type"] = "Aging soon"
             copy["uses_in_repo"] = uses_in_repo(scope, repos_root, repo, name)
             output.append(copy)
 

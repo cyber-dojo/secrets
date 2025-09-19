@@ -1,0 +1,18 @@
+[
+  {
+    "days_since_update": 359,
+    "days_to_expiry": 2,
+    "days_to_update": 6,
+    "expires_at": "2025-07-24",
+    "has_github_secret": true,
+    "has_txt_file": true,
+    "is_secret": true,
+    "name": "SOME_SECRET",
+    "repo": "cli",
+    "scope": "repo",
+    "txt_filename": "txt_root/cli/gh-repo-some-secret.txt",
+    "type": "Expiring soon",
+    "updated_at": "2024-07-28",
+    "uses_in_repo": 0
+  }
+]

@@ -7,9 +7,10 @@
     "has_txt_file": true,
     "is_secret": true,
     "name": "THIS_IS_A_NEW_SECRET",
-    "repo": "secrets",
+    "repo": "server",
     "scope": "org",
-    "txt_filename": "txt_root/secrets/gh-org-this-is-a-new-secret.txt",
+    "txt_filename": "txt_root/server/gh-org-this-is-a-new-secret.txt",
     "updated_at": "2025-07-08"
   }
 ]
+

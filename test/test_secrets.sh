@@ -4,6 +4,7 @@ set -Eeu
 MY_DIR="$(dirname "${BASH_SOURCE[0]}")"
 source "${MY_DIR}/lib.sh"
 
+test_repo_secret_expiring_and_needs_updating()          { assert_secrets "${FUNCNAME}"; }
 test_new_org_secret_with_secret_txt_file()             { assert_secrets "${FUNCNAME}"; }
 test_new_org_secret_with_no_matching_secret_txt_file() { assert_secrets "${FUNCNAME}"; }
 test_new_repo_secret_with_no_secret_txt_file()         { assert_secrets "${FUNCNAME}"; }

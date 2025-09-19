@@ -22,7 +22,7 @@ The file [.github/workflows/check-secrets.yml](.github/workflows/check-secrets.y
    - Includes a link to the [docs/README.md](docs/README.md) file containing detailed instructions
 - Sends a Slack message to the #cyber-dojo-alerts channel for team visibility
    - Includes a link to the workflow-run
-- Makes attestations to the [secrets](https://app.kosli.com/cyber-dojo/flows/secrets/trails/) Flow in the `cyber-dojo` Kosli org.
+- Makes attestations to a [secrets](https://app.kosli.com/cyber-dojo/flows/secrets/trails/) Trail in the `cyber-dojo` Kosli org.
    - Uses a custom-attestation-type. See [workflow](.github/workflows/create-custom-attestation.yml)
      and [schema](docs/custom-attestation-type-schema.json).
    - Secrets are non-compliant in their Trail if they are:
@@ -77,35 +77,30 @@ Note: A count of zero typically indicates:
 **Example Output:**
 
 ```txt
-1. Secret without a .txt file
+...
+4. Secret without a .txt file
    - secret name = KOSLI_API_TOKEN_MEEKROSOFT
    - scope = org
    - repo = secrets
    - suggested filename = txt_root/secrets/gh-org-kosli-api-token-meekrosoft.txt
    - occurrences in repo workflows = 0   
 
-2. Secret with only a .txt file
+5. Secret with only a .txt file
    - secret name = KOSLI_API_TOKEN_HELLO
    - scope = org
    - repo = secrets
    - see file txt_root/secrets/gh-org-kosli-api-token-hello.txt
    - occurrences in repo workflows = 2   
 
-3. Secret will soon expire
-   - secret name = KOSLI_API_TOKEN_STAGING
-   - scope = repo
-   - repo = cli
-   - expires in 6 days
-   - see file txt_root/cli/gh-repo-kosli-api-token-staging.txt
-   - occurrences in repo workflows = 4   
-   
-4. Secret will soon need updating
+6. Secret will soon expire
    - secret name = KOSLI_API_TOKEN
    - scope = repo
    - repo = ks8configdump
-   - update due in 9 days
+   - expires in 6 days
+   - update due in 9 days     
    - see file txt_root/ks8configdump/gh-repo-kosli-api-token.txt
    - occurrences in repo workflows = 2
+..
 ```
 
 # Testing
