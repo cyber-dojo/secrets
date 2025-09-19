@@ -22,7 +22,7 @@ def print_help():
         "has_github_secret": true,
         "has_txt_file": true,
         "name": "KOSLI_API_TOKEN_PROD",
-        "origin": "server",
+        "origin": "secrets",
         "scope": "org",
         "updated_at": "2025-07-12"
       }   
@@ -39,7 +39,7 @@ def print_help():
           "repos": {
             "cli": { REPO_SECRETS },
             "terraform-server": { REPO_SECRETS },
-            "server": { REPO_SECRETS },
+            "secrets": { REPO_SECRETS },
             ...
           }          
         }        
@@ -56,17 +56,17 @@ def print_help():
             }        
 
     2. TXT_ROOT
-    The name of a dir containing one sub-dir for each repo in the kosli-dev Org that uses secrets.
+    The name of a dir containing one sub-dir for each repo in the cyber-dojo Org that uses secrets.
     An example (test) dir lives at: test/new_repo_secret_with_matching_secret_txt_file/
 
       If TXT_ROOT is "~", then ~ might contain sub-dirs for several repos, three of which are 
-      'server', 'cli', and 'terraform-server'. For example: 
+      'secrets', 'cli', and 'terraform-server'. For example: 
 
-      ~/server/
-      ~/server/gh-org-one.txt
-      ~/server/gh-org-two.txt
-      ~/server/gh-repo-one.txt
-      ~/server/gh-repo-two.txt
+      ~/secrets/
+      ~/secrets/gh-org-one.txt
+      ~/secrets/gh-org-two.txt
+      ~/secrets/gh-repo-one.txt
+      ~/secrets/gh-repo-two.txt
 
       ~/cli/
       ~/cli/gh-repo-alpha.txt
@@ -80,7 +80,7 @@ def print_help():
       ~/terraform-server/gh-repo-d.txt                                                  
 
     The secrets for each Repo-sub-dir live inside files named gh-repo-*.txt 
-    The 'server' sub-dir also contains Org-scope secrets, inside files named gh-org-*.txt
+    The 'secrets' sub-dir also contains Org-scope secrets, inside files named gh-org-*.txt
 
     The first two lines of each text file must have this structure:
       secret-name: SECRET_NAME
@@ -90,10 +90,10 @@ def print_help():
       secret-name: ALPHA
     means the Repo called 'cli' has a secret named 'ALPHA' expiring on 2025-07-29
 
-    For example, ~/server/gh-org-wibble.txt having this first line:
+    For example, ~/secrets/gh-org-wibble.txt having this first line:
       secret-name: WIBBLE
       secret-expire: 2025-11-05
-    means the kosli-dev Org has a secret named 'WIBBLE' expiring 2025-11-05       
+    means the cyber-dojo Org has a secret named 'WIBBLE' expiring 2025-11-05       
 
     If a secret has no expiry date, secret-expire: must be set to 'never'
 
@@ -117,7 +117,7 @@ def blend_secrets(api_secrets_filename, txt_root, date_today):
             "name": secret["name"],
             "updated_at": updated_at,
             "days_since_update": days_diff(updated_at, date_today),
-            "repo": "server",
+            "repo": "secrets",
             "scope": "org",
             "has_github_secret": True,
             "has_txt_file": False,
@@ -146,11 +146,11 @@ def blend_secrets(api_secrets_filename, txt_root, date_today):
             })
 
     # Process txt_root dir Org level secrets
-    known_org_secrets = get_txt_secrets(txt_root, 'server', "gh-org-*.txt")
+    known_org_secrets = get_txt_secrets(txt_root, 'secrets', "gh-org-*.txt")
     for secret_name, value in known_org_secrets.items():
         expiry_date = value['expiry_date']
         is_secret = value['is_secret']
-        index = find_secret_index(output, secret_name, "org", "server")
+        index = find_secret_index(output, secret_name, "org", "secrets")
         if index is not None:
             entry = output[index]
             entry["has_txt_file"] = True
@@ -161,7 +161,7 @@ def blend_secrets(api_secrets_filename, txt_root, date_today):
         else:
             output.append({
                 "name": secret_name,
-                "repo": "server",
+                "repo": "secrets",
                 "scope": "org",
                 "has_github_secret": False,
                 "has_txt_file": True,

@@ -20,9 +20,9 @@
     "has_txt_file": true,
     "is_secret": true,
     "name": "LIST_ORG_AND_REPO_SECRETS",
-    "repo": "secrets",
+    "repo": "wibble",
     "scope": "repo",
-    "txt_filename": "txt_root/secrets/gh-repo-list-org-and-repo-secrets.txt",
+    "txt_filename": "txt_root/wibble/gh-repo-list-org-and-repo-secrets.txt",
     "updated_at": "2025-07-21"
   },
   {

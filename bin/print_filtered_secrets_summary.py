@@ -74,16 +74,16 @@ def print_secrets(filtered_filename):
 
 
 def see_file_message(txt_filename):
-    url = f"https://github.com/kosli-dev/secrets/blob/main/{txt_filename}"
+    url = f"https://github.com/cyber-dojo/secrets/blob/main/{txt_filename}"
     return f"    - see file [{txt_filename}]({url})"
 
 
 def see_gh_message(scope, repo, name):
     if scope == "org":
-        url = "https://github.com/organizations/kosli-dev/settings/secrets/actions"
+        url = "https://github.com/organizations/cyber-dojo/settings/secrets/actions"
     else:
         assert scope == "repo", scope
-        url = f"https://github.com/kosli-dev/{repo}/settings/secrets/actions/{name}"
+        url = f"https://github.com/cyber-dojo/{repo}/settings/secrets/actions/{name}"
 
     return f"    - see [in GitHub]({url})"
 
