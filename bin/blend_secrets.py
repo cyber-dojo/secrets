@@ -161,7 +161,7 @@ def blend_secrets(api_secrets_filename, txt_root, date_today):
         else:
             output.append({
                 "name": secret_name,
-                "repo": "server",
+                "repo": "secrets",
                 "scope": "org",
                 "has_github_secret": False,
                 "has_txt_file": True,
