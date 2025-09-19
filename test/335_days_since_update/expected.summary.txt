@@ -2,11 +2,11 @@
 1. Secret will soon expire
     - secret name = KOSLI_API_TOKEN_PROD
     - scope = org
-    - repo = server
+    - repo = secrets
     - expires in 7 days
     - update due in 355 days
-    - see file [txt_root/server/gh-org-kosli-api-token.txt](https://github.com/kosli-dev/secrets/blob/main/txt_root/server/gh-org-kosli-api-token.txt)
-    - see [in GitHub](https://github.com/organizations/kosli-dev/settings/secrets/actions)
+    - see file [txt_root/secrets/gh-org-kosli-api-token.txt](https://github.com/cyber-dojo/secrets/blob/main/txt_root/secrets/gh-org-kosli-api-token.txt)
+    - see [in GitHub](https://github.com/organizations/cyber-dojo/settings/secrets/actions)
 
 2. Secret will soon expire
     - secret name = SOME_SECRET
@@ -14,5 +14,5 @@
     - repo = cli
     - expires in 21 days
     - update due in 30 days
-    - see file [txt_root/cli/gh-repo-some-secret.txt](https://github.com/kosli-dev/secrets/blob/main/txt_root/cli/gh-repo-some-secret.txt)
-    - see [in GitHub](https://github.com/kosli-dev/cli/settings/secrets/actions/SOME_SECRET)
+    - see file [txt_root/cli/gh-repo-some-secret.txt](https://github.com/cyber-dojo/secrets/blob/main/txt_root/cli/gh-repo-some-secret.txt)
+    - see [in GitHub](https://github.com/cyber-dojo/cli/settings/secrets/actions/SOME_SECRET)

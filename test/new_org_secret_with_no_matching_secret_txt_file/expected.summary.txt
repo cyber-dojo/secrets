@@ -2,6 +2,6 @@
 1. Secret with no .txt file
     - secret name = THIS_IS_A_NEW_SECRET
     - scope = org
-    - repo = server
-    - suggested filename = txt_root/server/gh-org-this-is-a-new-secret.txt
-    - see [in GitHub](https://github.com/organizations/kosli-dev/settings/secrets/actions)
+    - repo = secrets
+    - suggested filename = txt_root/secrets/gh-org-this-is-a-new-secret.txt
+    - see [in GitHub](https://github.com/organizations/cyber-dojo/settings/secrets/actions)

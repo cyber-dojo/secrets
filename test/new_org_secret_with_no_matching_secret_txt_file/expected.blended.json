@@ -7,7 +7,7 @@
     "has_txt_file": false,
     "is_secret": true,
     "name": "THIS_IS_A_NEW_SECRET",
-    "repo": "server",
+    "repo": "secrets",
     "scope": "org",
     "txt_filename": null,
     "updated_at": "2025-07-08"
