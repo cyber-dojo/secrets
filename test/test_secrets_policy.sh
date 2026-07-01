@@ -5,7 +5,9 @@ MY_DIR="$(dirname "${BASH_SOURCE[0]}")"
 source "${MY_DIR}/lib.sh"
 
 readonly POLICY="${MY_DIR}/../policies/secrets.rego"
-readonly PARAMS="${MY_DIR}/../policies/secrets-params.json"
+# Pinned thresholds so test outcomes do not change when the production
+# thresholds in policies/secrets-params.json are tuned.
+readonly PARAMS="${MY_DIR}/secrets-params.json"
 
 setUp()
 {

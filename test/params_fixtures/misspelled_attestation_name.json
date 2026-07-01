@@ -1,0 +1,5 @@
+{
+  "attestation_nameX": "blended-secrets",
+  "rotation_days": 365,
+  "alert_window_days": 30
+}

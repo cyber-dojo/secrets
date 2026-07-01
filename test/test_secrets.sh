@@ -23,6 +23,9 @@ assert_secrets()
 {
   local -r func="${1}"
   local -r test_root="${MY_DIR}/${func:5}"
+  # Pinned thresholds so test outcomes do not change when the production
+  # thresholds in policies/secrets-params.json are tuned.
+  local -r params_file="${MY_DIR}/secrets-params.json"
   local -r expected_blended="${test_root}/expected.blended.json"
   local -r expected_filtered="${test_root}/expected.filtered.json"
   local -r expected_summary="${test_root}/expected.summary.txt"
@@ -40,7 +43,7 @@ assert_secrets()
 
   # - - - - - - - - - - - - - - - - - - -
 
-  "${MY_DIR}/../bin/filter_secrets.py" "${expected_blended}" \
+  "${MY_DIR}/../bin/filter_secrets.py" "${expected_blended}" "${params_file}" \
     >"${stdoutF}" 2>"${stderrF}"
 
   assertEquals "line:${LINENO}" 0 $?
@@ -58,7 +61,7 @@ assert_secrets()
 
   # - - - - - - - - - - - - - - - - - - -
 
-  "${MY_DIR}/../bin/filter_secrets.py" "${expected_blended}" "${test_root}/repos_root" \
+  "${MY_DIR}/../bin/filter_secrets.py" "${expected_blended}" "${params_file}" "${test_root}/repos_root" \
     >"${stdoutF}" 2>"${stderrF}"
 
   assertEquals "line:${LINENO}" 0 $?
