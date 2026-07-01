@@ -3,8 +3,23 @@
 import glob, os, sys, json
 from copy import deepcopy
 
-ROTATION_DAYS = 365
-ALERT_WINDOW_DAYS = 30
+
+def load_params():
+    """Load the rotation/alert thresholds from the shared policy params file.
+
+    policies/secrets-params.json is the single source of truth shared with the
+    Rego policy (policies/secrets.rego), so the Kosli compliance verdict and
+    this filter's "needs attention" list are always driven by the same numbers.
+    Resolved relative to this script so it works regardless of the caller's cwd.
+    """
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    params_filename = os.path.join(script_dir, "..", "policies", "secrets-params.json")
+    with open(params_filename, "r") as file:
+        params = json.load(file)
+    return params["rotation_days"], params["alert_window_days"]
+
+
+ROTATION_DAYS, ALERT_WINDOW_DAYS = load_params()
 
 
 def print_help():

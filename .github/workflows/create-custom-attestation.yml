@@ -27,5 +27,4 @@ jobs:
         run:
           kosli create attestation-type secrets
             --description "Existence of secret .txt file, existence of secret in Github, days to expiry"
-            --jq "[.[] | .is_secret == false or (.has_txt_file and .days_to_expiry >= 7 and .has_github_secret and .days_since_update <= (365-7))] | all"
             --schema "./docs/custom-attestation-type-schema.json"

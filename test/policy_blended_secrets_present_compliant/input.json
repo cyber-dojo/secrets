@@ -1,0 +1,57 @@
+{
+  "trail": {
+    "name": "secrets-check-1000",
+    "flow": "secrets",
+    "compliance_status": {
+      "attestations_statuses": {
+        "pull-request": { "is_compliant": true, "status": "COMPLETE" },
+        "unit-tests":   { "is_compliant": true, "status": "COMPLETE" },
+        "blended-secrets": {
+          "is_compliant": true,
+          "status": "COMPLETE",
+          "attestation_data": [
+            {
+              "name": "KOSLI_API_TOKEN",
+              "repo": "secrets",
+              "scope": "org",
+              "is_secret": true,
+              "has_github_secret": true,
+              "has_txt_file": true,
+              "days_since_update": 17,
+              "days_to_expiry": 300,
+              "expires_at": "2027-04-27",
+              "txt_filename": "txt_root/secrets/gh-org-kosli-api-token.txt",
+              "updated_at": "2026-06-14"
+            },
+            {
+              "name": "SLACK_WEBHOOK_URL",
+              "repo": "differ",
+              "scope": "repo",
+              "is_secret": true,
+              "has_github_secret": true,
+              "has_txt_file": true,
+              "days_since_update": 50,
+              "days_to_expiry": 120,
+              "expires_at": "2026-10-29",
+              "txt_filename": "txt_root/differ/gh-repo-slack-webhook-url.txt",
+              "updated_at": "2026-05-12"
+            },
+            {
+              "name": "PUBLIC_CONFIG_FLAG",
+              "repo": "web",
+              "scope": "repo",
+              "is_secret": false,
+              "has_github_secret": true,
+              "has_txt_file": true,
+              "days_since_update": 400,
+              "days_to_expiry": 5,
+              "expires_at": "2026-07-06",
+              "txt_filename": "txt_root/web/gh-repo-public-config-flag.txt",
+              "updated_at": "2025-05-28"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
