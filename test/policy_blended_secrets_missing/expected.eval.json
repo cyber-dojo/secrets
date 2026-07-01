@@ -1,0 +1,6 @@
+{
+  "allow": false,
+  "violations": [
+    "attestation 'blended-secrets' is missing from the trail"
+  ]
+}

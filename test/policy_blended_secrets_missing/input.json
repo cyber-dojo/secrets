@@ -1,0 +1,12 @@
+{
+  "trail": {
+    "name": "secrets-check-999",
+    "flow": "secrets",
+    "compliance_status": {
+      "attestations_statuses": {
+        "pull-request": { "is_compliant": true, "status": "COMPLETE" },
+        "unit-tests":   { "is_compliant": true, "status": "COMPLETE" }
+      }
+    }
+  }
+}
