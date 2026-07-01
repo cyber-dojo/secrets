@@ -4,28 +4,33 @@ import glob, os, sys, json
 from copy import deepcopy
 
 
-def load_params():
-    """Load the rotation/alert thresholds from the shared policy params file.
+def load_params(params_filename):
+    """Load the rotation/alert thresholds from the given policy params file.
 
-    policies/secrets-params.json is the single source of truth shared with the
-    Rego policy (policies/secrets.rego), so the Kosli compliance verdict and
-    this filter's "needs attention" list are always driven by the same numbers.
-    Resolved relative to this script so it works regardless of the caller's cwd.
+    The params file is passed on the command line (see __main__). In production
+    it is policies/secrets-params.json, the single source of truth shared with
+    the Rego policy (policies/secrets.rego), so the Kosli compliance verdict and
+    this filter's "needs attention" list are driven by the same numbers. Tests
+    pass a fixture with pinned thresholds so their outcomes do not change when
+    the production thresholds are tuned.
     """
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    params_filename = os.path.join(script_dir, "..", "policies", "secrets-params.json")
     with open(params_filename, "r") as file:
-        params = json.load(file)
+        try:
+            params = json.load(file)
+        except json.JSONDecodeError as error:
+            raise AssertionError(f"{params_filename} is not valid JSON: {error}") from error
+    # attestation_name is used only by the Rego policy, not by this filter, but
+    # it is validated here so a misconfigured shared params file is caught.
+    for key in ("rotation_days", "alert_window_days", "attestation_name"):
+        diagnostic = f"{params_filename} does not contain the required key '{key}'"
+        assert key in params, diagnostic
     return params["rotation_days"], params["alert_window_days"]
-
-
-ROTATION_DAYS, ALERT_WINDOW_DAYS = load_params()
 
 
 def print_help():
     print("""
-    Use: filter_secrets.py <BLENDED_FILENAME> [<REPOS_ROOT>]
-    
+    Use: filter_secrets.py <BLENDED_FILENAME> <PARAMS_FILENAME> [<REPOS_ROOT>]
+
     A program to filter the output of blend_secrets.py, selecting only those that are secrets and:
     - Have no .txt file
         are known only from GitHub Secrets API responses
@@ -38,12 +43,12 @@ def print_help():
     """)
 
 
-def filter_secrets(blended_filename, repos_root):
+def filter_secrets(blended_filename, repos_root, rotation_days, alert_window_days):
     output = []
 
     with open(blended_filename, 'r') as file:
         secrets = json.load(file)
-    
+
     for secret in secrets:
         repo = secret["repo"]
         scope = secret["scope"]
@@ -56,7 +61,7 @@ def filter_secrets(blended_filename, repos_root):
         has_github_secret = secret["has_github_secret"]
 
         if has_github_secret is True:
-            secret["days_to_update"] = ROTATION_DAYS - secret["days_since_update"]
+            secret["days_to_update"] = rotation_days - secret["days_since_update"]
         else:
             secret["days_to_update"] = None
 
@@ -74,8 +79,8 @@ def filter_secrets(blended_filename, repos_root):
             copy["uses_in_repo"] = uses_in_repo(scope, repos_root, repo, name)
             output.append(copy)
 
-        expiring = secret['days_to_expiry'] <= ALERT_WINDOW_DAYS
-        aging = has_github_secret is True and (secret["days_since_update"] >= (ROTATION_DAYS - ALERT_WINDOW_DAYS))
+        expiring = secret['days_to_expiry'] <= alert_window_days
+        aging = has_github_secret is True and (secret["days_since_update"] >= (rotation_days - alert_window_days))
 
         if expiring or aging:
             copy = deepcopy(secret)
@@ -105,11 +110,13 @@ def uses_in_repo(scope, repos_root, repo_name, name):
 
 if __name__ == "__main__":  # pragma: no cover
     nargs = len(sys.argv)
-    if nargs != 2 and nargs != 3:
+    if nargs != 3 and nargs != 4:
         print_help()
         exit(0)
-    
+
     blended_filename = sys.argv[1]
-    repos_root = sys.argv[2] if nargs == 3 else None
-    filter_secrets(blended_filename, repos_root)
+    params_filename = sys.argv[2]
+    repos_root = sys.argv[3] if nargs == 4 else None
+    rotation_days, alert_window_days = load_params(params_filename)
+    filter_secrets(blended_filename, repos_root, rotation_days, alert_window_days)
 
