@@ -1,8 +1,8 @@
 secret-name: SONARCLOUD_TOKEN
-secret-expire: 2026-08-19
+secret-expire: 2027-08-11
 is-secret: true
 
-secret-updated: 2025-08-19
+secret-updated: 2026-08-11
 secret-updated-by: Faye
 secret-type: gh-repo
 
@@ -11,9 +11,9 @@ Used to authenticate with SonarQube's Github scan action.
 
 Update-instructions:
 Go to https://sonarcloud.io/projects and click on your user icon in the top right-hand corner.
-Go to My Account -> Security.
+Go to My Account -> Access Tokens.
 Find the token named 'Analyze "differ"', and click the Revoke button on the right to delete.
-Create a new token with the name 'Analyze "differ"' and click Generate Token. Copy the new value.
+Create a new token with the name 'Analyze "differ"' and Custom expiry date (set to one year from now). Copy the new value.
 
 
 Update-instructions:
