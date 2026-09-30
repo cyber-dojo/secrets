@@ -1,0 +1,22 @@
+secret-name: SONARCLOUD_TOKEN
+secret-expire: 2027-09-30
+is-secret: true
+
+secret-updated: 2026-09-30
+secret-updated-by: Faye
+secret-type: gh-repo
+
+secret-usage:
+Used to authenticate with SonarQube's Github scan action.
+
+Update-instructions:
+Go to https://sonarcloud.io/projects and click on your user icon in the top right-hand corner.
+Go to My Account -> Access Tokens.
+Find the token named 'Analyze "web"', and click the Revoke button on the right to delete.
+Create a new token with the name 'Analyze "web"' and Custom expiry date (set to one year from now). Click Generate Token. Copy the new value.
+
+
+Update-instructions:
+Go to https://github.com/cyber-dojo/web/settings/secrets/actions/SONARCLOUD_TOKEN.
+Paste the token into the field.
+Click [Update secret]
