@@ -14,7 +14,7 @@
 #   3. `violations` are diagnostics only; they explain a denial, they do not
 #      decide it.
 #
-# Parameters (passed via `kosli evaluate trail --params`, read as data.params):
+# Parameters (passed via `kosli evaluate policy --params`, read as data.params):
 #   attestation_name   - name of the custom attestation carrying the blended data
 #   rotation_days      - a github secret should be rotated within this many days
 #   alert_window_days  - warn this many days before expiry / before rotation is due
