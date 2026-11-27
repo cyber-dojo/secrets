@@ -3,33 +3,25 @@ set -Eeu
 
 MY_DIR="$(dirname "${BASH_SOURCE[0]}")"
 source "${MY_DIR}/lib.sh"
+# Defines _opa, and W, the prefix a path given to _opa must carry.
+source "${MY_DIR}/../bin/lib-opa.sh"
 
-readonly POLICY="${MY_DIR}/../policies/secrets.rego"
+readonly POLICY="${W}/policies/secrets.rego"
 # Pinned thresholds so test outcomes do not change when the production
 # thresholds in policies/secrets-params.json are tuned.
 readonly PARAMS="${MY_DIR}/secrets-params.json"
 
-setUp()
-{
-  # The policy tests drive the kosli CLI (it embeds the OPA/Rego engine).
-  # The CLI is only installed on the main branch in CI, so skip elsewhere
-  # rather than fail on branch pushes.
-  if ! installed kosli; then
-    startSkipping
-  fi
-}
-
-# Evaluate policies/secrets.rego against a local JSON fixture (no API calls)
-# and leave the normalised {allow, violations} verdict in stdoutF.
+# Evaluate policies/secrets.rego against a local JSON fixture with `opa eval`
+# (no API calls) and leave the normalised {allow, violations} verdict in
+# stdoutF. The params go in the query rather than a file, so a Docker opa
+# needs no mount but the repo.
 evaluate_input()
 {
   local -r input_file="${1}"
-  kosli evaluate input \
-    --input-file "${input_file}" \
-    --policy "${POLICY}" \
-    --params "@${PARAMS}" \
-    --no-assert \
-    --output json 2>"${stderrF}" | jq -S '{allow, violations}' >"${stdoutF}"
+  _opa eval --stdin-input --format raw \
+    --data "${POLICY}" \
+    "{\"allow\": data.policy.allow, \"violations\": data.policy.violations} with data.params as $(cat "${PARAMS}")" \
+    <"${input_file}" 2>"${stderrF}" | jq -S '.' >"${stdoutF}"
 }
 
 # A trail whose blended-secrets attestation was never reported must be DENIED
